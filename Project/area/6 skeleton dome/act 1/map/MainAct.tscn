@@ -352,7 +352,6 @@ Data = ExtResource("2_3jkye")
 metadata/_edit_lock_ = true
 
 [node name="CharacterSpawn" parent="MainAct/SpawnPosition" instance=ExtResource("2_4su1b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.819, -0.00012207, -899.617)
 
 [node name="CullingMap" type="Node3D" parent="MainAct"]
 

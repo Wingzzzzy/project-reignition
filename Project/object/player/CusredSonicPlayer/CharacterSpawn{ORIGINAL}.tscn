@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://dql5q7525xd3s"]
+
+[ext_resource type="Script" path="res://object/trigger/modules/CheckpointTrigger.cs" id="1_5t0p4"]
+[ext_resource type="PackedScene" uid="uid://bf0e60p4fbkkv" path="res://object/player/CusredSonicPlayer/CursedSonic.tscn" id="2_hpscx"]
+[ext_resource type="PackedScene" uid="uid://boo3c0dnk36vn" path="res://object/player/Camera.tscn" id="3_1lr33"]
+[ext_resource type="PackedScene" uid="uid://b33gqnpc4784k" path="res://interface/gameplay/countdown/Countdown.tscn" id="4_xnvtg"]
+[ext_resource type="PackedScene" uid="uid://chn7ckbhlrr2g" path="res://interface/gameplay/hud/HeadsUpDisplay.tscn" id="5_pbp2m"]
+[ext_resource type="PackedScene" uid="uid://x03eut8s4p3l" path="res://interface/gameplay/results/LevelResults.tscn" id="6_6fwnr"]
+[ext_resource type="PackedScene" uid="uid://coshp5qmt1aq7" path="res://interface/gameplay/pause/PauseMenu.tscn" id="7_gbs7u"]
+
+[node name="CharacterSpawn" type="Node3D"]
+script = ExtResource("1_5t0p4")
+
+[node name="Player" parent="." node_paths=PackedStringArray("Camera", "Animator", "Effect") instance=ExtResource("2_hpscx")]
+Camera = NodePath("../Camera")
+Animator = NodePath("Components/CursedSonic")
+Effect = NodePath("Components/CursedSonic/Effect")
+
+[node name="Camera" parent="." instance=ExtResource("3_1lr33")]
+
+[node name="Countdown" parent="." instance=ExtResource("4_xnvtg")]
+
+[node name="HeadsUpDisplay" parent="." instance=ExtResource("5_pbp2m")]
+
+[node name="LevelResults" parent="." instance=ExtResource("6_6fwnr")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_gbs7u")]
+
+[connection signal="CountdownFinished" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [true]]
+[connection signal="CountdownStarted" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [false]]
