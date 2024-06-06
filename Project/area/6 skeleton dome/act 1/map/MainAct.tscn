@@ -3615,7 +3615,6 @@ distance = 20.0
 
 [node name="Interior" type="Node3D" parent="MainAct"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 440, 0, -890)
-visible = false
 script = ExtResource("3_4cg0m")
 saveVisibilityOnCheckpoint = true
 
@@ -6332,5 +6331,3 @@ shape = SubResource("BoxShape3D_7ky5u")
 [connection signal="Teleport" from="MainAct/HallT/WarpRed" to="Static/Visuals/15Hall" method="Activate"]
 [connection signal="Teleport" from="MainAct/HallT/WarpRed" to="MainAct/HallT" method="Deactivate"]
 [connection signal="Teleport" from="MainAct/HallT/WarpRed" to="MainAct/End" method="Activate"]
-
-[editable path="Static"]
