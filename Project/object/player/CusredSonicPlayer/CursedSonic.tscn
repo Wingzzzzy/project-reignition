@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyip40w65iqfq"]
+
+[ext_resource type="Script" path="res://object/player/resource/script/CharacterController.cs" id="1_djkvn"]
+[ext_resource type="PackedScene" uid="uid://qmsgr6kswk87" path="res://object/player/resource/component/PathFollower.tscn" id="2_xyx0y"]
+[ext_resource type="PackedScene" uid="uid://dl17ayna8tb0q" path="res://object/player/resource/model/CusedSonic.tscn" id="3_03pxs"]
+[ext_resource type="PackedScene" uid="uid://bemb37fo0seak" path="res://object/player/resource/component/Skills.tscn" id="4_ep1si"]
+[ext_resource type="PackedScene" uid="uid://dq4rt7vk6a7kv" path="res://object/player/resource/component/lockon/Lockon.tscn" id="5_5k14u"]
+
+[sub_resource type="Curve" id="Curve_0y4at"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0645833, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0777784, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_l0cmy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 0), 0.0, 0.0, 0, 0, Vector2(0.4, 0.5), 4.05151, 4.05151, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uookt"]
+radius = 0.4
+
+[sub_resource type="SphereShape3D" id="80"]
+radius = 0.36
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Animator", "Effect", "Skills", "Lockon") groups=["player"]]
+collision_layer = 2
+collision_mask = 9
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_djkvn")
+turningSpeedCurve = SubResource("Curve_0y4at")
+inputCurve = SubResource("Curve_l0cmy")
+jumpHeight = 4.8
+jumpDashSpeed = 36.0
+jumpDashPower = 4.0
+jumpDashGravity = 18.0
+jumpDashMaxGravity = -24.0
+backflipHeight = 2.4
+environmentCollider = NodePath("CollisionShape3D")
+areaTrigger = NodePath("Components/AreaTrigger/CollisionShape3D")
+PathFollower = NodePath("Components/PathFollower")
+Animator = NodePath("")
+Effect = NodePath("")
+Skills = NodePath("Components/Skills")
+Lockon = NodePath("Components/Lockon")
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="PathFollower" parent="Components" instance=ExtResource("2_xyx0y")]
+
+[node name="CursedSonic" parent="Components" instance=ExtResource("3_03pxs")]
+
+[node name="Effect" parent="Components/CursedSonic" index="0" node_paths=PackedStringArray("stepEmitters")]
+stepEmitters = [NodePath("VFX/StepFX/PavementStepParticle"), NodePath("VFX/StepFX/SandStepParticle"), null, null, null, null, NodePath("VFX/StepFX/WaterStepParticle")]
+
+[node name="ChestAttachment" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="4"]
+transform = Transform3D(1, 7.92686e-07, -7.92686e-07, -7.92686e-07, 1, 1.59254e-08, 7.92686e-07, -1.59248e-08, 1, 5.80681e-08, 0.554189, -2.23517e-08)
+
+[node name="RFoot" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="5"]
+transform = Transform3D(1, -1.02496e-12, -6.143e-13, 6.16757e-13, 2.03494e-07, 0.999999, -9.71667e-13, -0.999998, 2.21189e-07, -0.0397276, 0.155469, 0.00205613)
+
+[node name="LFoot" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="6"]
+transform = Transform3D(1, 1.06581e-14, 6.15422e-12, -6.2165e-12, 1.07381e-06, 1, 1.33227e-13, -1, 1.07894e-06, 0.0397276, 0.155469, 0.00205613)
+
+[node name="Skills" parent="Components" instance=ExtResource("4_ep1si")]
+
+[node name="Lockon" parent="Components" node_paths=PackedStringArray("areaTrigger") instance=ExtResource("5_5k14u")]
+areaTrigger = NodePath("../AreaTrigger")
+
+[node name="AreaTrigger" type="Area3D" parent="Components" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/AreaTrigger"]
+shape = SubResource("SphereShape3D_uookt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+shape = SubResource("80")
+
+[connection signal="body_entered" from="Components/AreaTrigger" to="." method="OnObjectCollisionEnter"]
+[connection signal="body_exited" from="Components/AreaTrigger" to="." method="OnObjectCollisionExit"]
+
+[editable path="Components/CursedSonic"]
