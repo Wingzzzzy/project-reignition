@@ -1,24 +1,24 @@
 [gd_scene load_steps=45 format=3 uid="uid://dl17ayna8tb0q"]
 
-[ext_resource type="PackedScene" uid="uid://b5jl3vv1j1fck" path="res://object/player/resource/model/Sonic.gltf" id="1_mpb7i"]
-[ext_resource type="Script" path="res://object/player/resource/script/CharacterAnimator.cs" id="2_rn2aq"]
-[ext_resource type="PackedScene" uid="uid://gp7nom61rmtj" path="res://object/player/resource/component/Effect.tscn" id="3_kctnu"]
-[ext_resource type="Material" uid="uid://db4kropnhyudk" path="res://effect/particle/material/Ember Blue.tres" id="4_1tm0l"]
-[ext_resource type="Material" uid="uid://dsn3x4u283jxc" path="res://effect/particle/material/Teleport Spark.tres" id="5_xsa1y"]
-[ext_resource type="Material" uid="uid://m0d6jfnxdrwg" path="res://effect/particle/material/Teleport Dust.tres" id="6_t54q4"]
-[ext_resource type="AudioStream" uid="uid://pbwii8b4qu3s" path="res://sound/sfx/player/teleport start.wav" id="7_tnwyg"]
-[ext_resource type="Texture2D" uid="uid://b5w45ugeuj4yt" path="res://object/player/resource/model/texture/CursedSonic_Textures/tex1_512x512_fcefed485450921d_14.png" id="8_2ho3a"]
-[ext_resource type="PackedScene" uid="uid://clet3u3mrcb8g" path="res://object/player/resource/effect/countdown/CountdownBoostParticle.tscn" id="8_77hue"]
-[ext_resource type="PackedScene" uid="uid://c2bl1sk5cfyq3" path="res://object/player/resource/effect/countdown/CountdownFlameParticle.tscn" id="9_kk0t0"]
-[ext_resource type="Material" uid="uid://cpvxjsa6vte37" path="res://effect/particle/material/Ember Orange.tres" id="10_ap1pd"]
-[ext_resource type="AnimationLibrary" uid="uid://dhcxjlduawy8d" path="res://object/player/resource/model/animation/ActionLibrary.gltf" id="11_v0q2y"]
-[ext_resource type="AnimationLibrary" uid="uid://dck4cudd7a66a" path="res://object/player/resource/model/animation/BalanceLibrary.gltf" id="12_s273o"]
-[ext_resource type="AnimationLibrary" uid="uid://bo26mw8v8m0eh" path="res://object/player/resource/model/animation/EventLibrary.gltf" id="13_leja6"]
-[ext_resource type="AnimationLibrary" uid="uid://ql8twqq248an" path="res://object/player/resource/model/animation/SidleLibrary.gltf" id="14_o7i06"]
-[ext_resource type="AudioStream" uid="uid://c5did7u4f8gq2" path="res://sound/sfx/player/flame countdown 1.wav" id="15_in6c0"]
-[ext_resource type="Script" path="res://object/trigger/modules/CameraTrigger.cs" id="16_40fd4"]
-[ext_resource type="Resource" uid="uid://ce3ywymj0dq0j" path="res://resource/preset/camera/common/InheritCam.tres" id="17_bkwxk"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://biwe75w273iq7" path="res://object/player/resource/model/animation/animation tree/Root.tres" id="18_2csro"]
+[ext_resource type="PackedScene" uid="uid://b5jl3vv1j1fck" path="res://object/player/resource/model/Sonic.gltf" id="1_v8d5t"]
+[ext_resource type="Script" path="res://object/player/resource/script/CharacterAnimator.cs" id="2_d8mxk"]
+[ext_resource type="PackedScene" uid="uid://gp7nom61rmtj" path="res://object/player/resource/component/Effect.tscn" id="3_5fjau"]
+[ext_resource type="Material" uid="uid://db4kropnhyudk" path="res://effect/particle/material/Ember Blue.tres" id="4_w5khe"]
+[ext_resource type="Material" uid="uid://dsn3x4u283jxc" path="res://effect/particle/material/Teleport Spark.tres" id="5_wluku"]
+[ext_resource type="Material" uid="uid://m0d6jfnxdrwg" path="res://effect/particle/material/Teleport Dust.tres" id="6_s41sd"]
+[ext_resource type="AudioStream" uid="uid://pbwii8b4qu3s" path="res://sound/sfx/player/teleport start.wav" id="7_cjpsw"]
+[ext_resource type="Texture2D" uid="uid://b5w45ugeuj4yt" path="res://object/player/resource/model/texture/CursedSonic_Textures/tex1_512x512_fcefed485450921d_14.png" id="8_knsmd"]
+[ext_resource type="PackedScene" uid="uid://clet3u3mrcb8g" path="res://object/player/resource/effect/countdown/CountdownBoostParticle.tscn" id="9_555ff"]
+[ext_resource type="PackedScene" uid="uid://c2bl1sk5cfyq3" path="res://object/player/resource/effect/countdown/CountdownFlameParticle.tscn" id="10_xbxje"]
+[ext_resource type="Material" uid="uid://cpvxjsa6vte37" path="res://effect/particle/material/Ember Orange.tres" id="11_lrs65"]
+[ext_resource type="AnimationLibrary" uid="uid://dhcxjlduawy8d" path="res://object/player/resource/model/animation/ActionLibrary.gltf" id="12_7x2vl"]
+[ext_resource type="AnimationLibrary" uid="uid://dck4cudd7a66a" path="res://object/player/resource/model/animation/BalanceLibrary.gltf" id="13_dp7vw"]
+[ext_resource type="AnimationLibrary" uid="uid://bo26mw8v8m0eh" path="res://object/player/resource/model/animation/EventLibrary.gltf" id="14_7cv3w"]
+[ext_resource type="AnimationLibrary" uid="uid://ql8twqq248an" path="res://object/player/resource/model/animation/SidleLibrary.gltf" id="15_usb0e"]
+[ext_resource type="AudioStream" uid="uid://c5did7u4f8gq2" path="res://sound/sfx/player/flame countdown 1.wav" id="16_87wd4"]
+[ext_resource type="Script" path="res://object/trigger/modules/CameraTrigger.cs" id="17_53fl0"]
+[ext_resource type="Resource" uid="uid://ce3ywymj0dq0j" path="res://resource/preset/camera/common/InheritCam.tres" id="18_nulin"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://biwe75w273iq7" path="res://object/player/resource/model/animation/animation tree/Root.tres" id="19_4yab1"]
 
 [sub_resource type="Curve" id="Curve_skwgn"]
 min_value = 1.0
@@ -52,10 +52,10 @@ color = Color(0, 0.686275, 1, 0.196078)
 alpha_curve = SubResource("CurveTexture_csox3")
 
 [sub_resource type="QuadMesh" id="QuadMesh_yuhe8"]
-material = ExtResource("4_1tm0l")
+material = ExtResource("4_w5khe")
 
 [sub_resource type="QuadMesh" id="QuadMesh_qfnk1"]
-material = ExtResource("5_xsa1y")
+material = ExtResource("5_wluku")
 
 [sub_resource type="Curve" id="Curve_oo253"]
 _data = [Vector2(0, 0), 0.0, 14.4924, 0, 0, Vector2(0.182131, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.01969, 0.0, 0, 0]
@@ -87,10 +87,10 @@ color = Color(0.188235, 0.67451, 1, 1)
 alpha_curve = SubResource("CurveTexture_pxvjs")
 
 [sub_resource type="QuadMesh" id="QuadMesh_2872x"]
-material = ExtResource("6_t54q4")
+material = ExtResource("6_s41sd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfhrd"]
-albedo_texture = ExtResource("8_2ho3a")
+albedo_texture = ExtResource("8_knsmd")
 
 [sub_resource type="Curve" id="Curve_2rxkn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -113,7 +113,7 @@ scale_min = 0.1
 scale_curve = SubResource("CurveTexture_j53km")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vcbic"]
-material = ExtResource("10_ap1pd")
+material = ExtResource("11_lrs65")
 size = Vector2(0.1, 0.1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6smkh"]
@@ -348,13 +348,13 @@ _data = {
 "teleport-start": SubResource("Animation_jxy1t")
 }
 
-[node name="CursedSonic" node_paths=PackedStringArray("animationTree", "eventAnimationPlayer") instance=ExtResource("1_mpb7i")]
-script = ExtResource("2_rn2aq")
+[node name="CursedSonic" node_paths=PackedStringArray("animationTree", "eventAnimationPlayer") instance=ExtResource("1_v8d5t")]
+script = ExtResource("2_d8mxk")
 animationTree = NodePath("AnimationTree")
 eventAnimationPlayer = NodePath("EventAnimationPlayer")
 movementAnimationSpeedCurve = SubResource("Curve_skwgn")
 
-[node name="Effect" parent="." index="0" node_paths=PackedStringArray("rightFoot", "leftFoot", "stepEmitters") instance=ExtResource("3_kctnu")]
+[node name="Effect" parent="." index="0" node_paths=PackedStringArray("rightFoot", "leftFoot", "stepEmitters") instance=ExtResource("3_5fjau")]
 rightFoot = NodePath("../SonicRoot/GeneralSkeleton/RFoot/SoleOffset")
 leftFoot = NodePath("../SonicRoot/GeneralSkeleton/LFoot/SoleOffset")
 stepEmitters = [NodePath("VFX/StepFX/PavementStepParticle"), NodePath("VFX/StepFX/SandStepParticle"), null, null, null, null, NodePath("VFX/StepFX/WaterStepParticle")]
@@ -405,11 +405,11 @@ process_material = SubResource("ParticleProcessMaterial_bddv2")
 draw_pass_1 = SubResource("QuadMesh_2872x")
 
 [node name="TeleportStartSFX" type="AudioStreamPlayer" parent="Effect/TeleportFX" index="3"]
-stream = ExtResource("7_tnwyg")
+stream = ExtResource("7_cjpsw")
 bus = &"SFX"
 
 [node name="TeleportEndSFX" type="AudioStreamPlayer" parent="Effect/TeleportFX" index="4"]
-stream = ExtResource("7_tnwyg")
+stream = ExtResource("7_cjpsw")
 bus = &"SFX"
 
 [node name="GeneralSkeleton" parent="SonicRoot" index="0"]
@@ -484,10 +484,10 @@ bone_idx = 5
 [node name="FlameOffset" type="Node3D" parent="SonicRoot/GeneralSkeleton/ChestAttachment" index="0"]
 transform = Transform3D(1, -9.31323e-09, 0, 3.72529e-09, 1, 0, 4.47035e-08, 2.23517e-08, 1, 0.02, -1.49012e-07, 0.1)
 
-[node name="CountdownBoostParticle" parent="SonicRoot/GeneralSkeleton/ChestAttachment/FlameOffset" index="0" instance=ExtResource("8_77hue")]
+[node name="CountdownBoostParticle" parent="SonicRoot/GeneralSkeleton/ChestAttachment/FlameOffset" index="0" instance=ExtResource("9_555ff")]
 visible = false
 
-[node name="CountdownFlameParticle" parent="SonicRoot/GeneralSkeleton/ChestAttachment/FlameOffset" index="1" instance=ExtResource("9_kk0t0")]
+[node name="CountdownFlameParticle" parent="SonicRoot/GeneralSkeleton/ChestAttachment/FlameOffset" index="1" instance=ExtResource("10_xbxje")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 visible = false
 
@@ -526,10 +526,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, -0.085, -0.15)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_6smkh"),
-"ActionLibrary": ExtResource("11_v0q2y"),
-"BalanceLibrary": ExtResource("12_s273o"),
-"EventLibrary": ExtResource("13_leja6"),
-"SidleLibrary": ExtResource("14_o7i06")
+"ActionLibrary": ExtResource("12_7x2vl"),
+"BalanceLibrary": ExtResource("13_dp7vw"),
+"EventLibrary": ExtResource("14_7cv3w"),
+"SidleLibrary": ExtResource("15_usb0e")
 }
 
 [node name="EventAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
@@ -542,26 +542,26 @@ libraries = {
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 
 [node name="FlameBurstSFX" type="AudioStreamPlayer" parent="CountdownRoot" index="0"]
-stream = ExtResource("15_in6c0")
+stream = ExtResource("16_87wd4")
 bus = &"SFX"
 
 [node name="CountdownPosition" type="Node3D" parent="CountdownRoot" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
-script = ExtResource("16_40fd4")
+script = ExtResource("17_53fl0")
 UpdateEveryFrame = true
-settings = ExtResource("17_bkwxk")
+settings = ExtResource("18_nulin")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="5"]
 active = false
 callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_6smkh"),
-"ActionLibrary": ExtResource("11_v0q2y"),
-"BalanceLibrary": ExtResource("12_s273o"),
-"EventLibrary": ExtResource("13_leja6"),
-"SidleLibrary": ExtResource("14_o7i06")
+"ActionLibrary": ExtResource("12_7x2vl"),
+"BalanceLibrary": ExtResource("13_dp7vw"),
+"EventLibrary": ExtResource("14_7cv3w"),
+"SidleLibrary": ExtResource("15_usb0e")
 }
-tree_root = ExtResource("18_2csro")
+tree_root = ExtResource("19_4yab1")
 anim_player = NodePath("../AnimationPlayer")
 parameters/air_tree/backflip_trigger/active = false
 parameters/air_tree/backflip_trigger/internal_active = false

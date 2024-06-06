@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgdhn3vex6l7j"]
 
 [ext_resource type="Script" path="res://object/trigger/modules/CheckpointTrigger.cs" id="1_52tq8"]
-[ext_resource type="PackedScene" uid="uid://c4kdj2x0c8h4m" path="res://object/player/Sonic.tscn" id="2_y86r2"]
+[ext_resource type="PackedScene" uid="uid://dyip40w65iqfq" path="res://object/player/CusredSonicPlayer/CursedSonic.tscn" id="2_2vrgm"]
 [ext_resource type="PackedScene" uid="uid://boo3c0dnk36vn" path="res://object/player/Camera.tscn" id="3_ne44w"]
 [ext_resource type="PackedScene" uid="uid://b33gqnpc4784k" path="res://interface/gameplay/countdown/Countdown.tscn" id="4_oghdi"]
 [ext_resource type="PackedScene" uid="uid://chn7ckbhlrr2g" path="res://interface/gameplay/hud/HeadsUpDisplay.tscn" id="5_x8o2u"]
@@ -11,8 +11,7 @@
 [node name="CharacterSpawn" type="Node3D"]
 script = ExtResource("1_52tq8")
 
-[node name="Player" parent="." node_paths=PackedStringArray("Camera") instance=ExtResource("2_y86r2")]
-Camera = NodePath("../Camera")
+[node name="Player" parent="." instance=ExtResource("2_2vrgm")]
 
 [node name="Camera" parent="." instance=ExtResource("3_ne44w")]
 
@@ -24,7 +23,5 @@ Camera = NodePath("../Camera")
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_ytsoi")]
 
-[connection signal="CountdownFinished" from="Countdown" to="Player" method="OnCountdownFinished"]
 [connection signal="CountdownFinished" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [true]]
-[connection signal="CountdownStarted" from="Countdown" to="Player" method="OnCountdownStarted"]
 [connection signal="CountdownStarted" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [false]]

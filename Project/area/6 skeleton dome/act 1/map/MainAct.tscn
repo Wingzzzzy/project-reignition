@@ -341,7 +341,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ky5u"]
 size = Vector3(30, 20, 1)
 
-[node name="Stage" type="Node"]
+[node name="Stage2" type="Node"]
 
 [node name="Static" parent="." instance=ExtResource("1_6irkq")]
 Data = ExtResource("2_3jkye")

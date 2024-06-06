@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6vlrltnp4jhp"]
+[gd_scene load_steps=10 format=3 uid="uid://c6vlrltnp4jhp"]
 
 [ext_resource type="PackedScene" uid="uid://bn6wr6l8s3qyt" path="res://object/trigger/StageTrigger.tscn" id="2_tlcwl"]
 [ext_resource type="Script" path="res://object/trigger/modules/LockoutTrigger.cs" id="3_5ajvl"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dxepb172kmp8n" path="res://object/stage/common/Goal.tscn" id="6_k35aj"]
 [ext_resource type="PackedScene" uid="uid://cby2m0q2072c2" path="res://area/2 dino jungle/act 1/Static.tscn" id="7_85nhw"]
 [ext_resource type="PackedScene" uid="uid://junmdgv0jj83" path="res://area/2 dino jungle/object/dino/DinoTrioGroup.tscn" id="7_ntpku"]
-[ext_resource type="Resource" uid="uid://bxshvuvtt3i28" path="res://area/2 dino jungle/act 1/camera/ChaseCam.tres" id="10_pwidg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibixj"]
 size = Vector3(100, 100, 250)
@@ -15,15 +14,9 @@ size = Vector3(100, 100, 250)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kvbov"]
 size = Vector3(14, 12, 8)
 
-[node name="Stage" type="Node"]
+[node name="Stage2" type="Node"]
 
 [node name="Static" parent="." instance=ExtResource("7_85nhw")]
-"Level ID" = "dj_a1_ring"
-"Mission Type" = 2
-"Objective Count" = 100
-"Item Cycling/Activation Trigger" = NodePath("")
-completionAnimator = NodePath("")
-initialCameraSettings = ExtResource("10_pwidg")
 
 [node name="RingAct" type="Node3D" parent="."]
 

@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyip40w65iqfq"]
+[gd_scene load_steps=10 format=3 uid="uid://c1klgdxt6huv5"]
 
-[ext_resource type="Script" path="res://object/player/resource/script/CharacterController.cs" id="1_1erku"]
-[ext_resource type="PackedScene" uid="uid://qmsgr6kswk87" path="res://object/player/resource/component/PathFollower.tscn" id="2_cvbn4"]
-[ext_resource type="PackedScene" uid="uid://dl17ayna8tb0q" path="res://object/player/resource/model/CursedSonic.tscn" id="3_mu518"]
-[ext_resource type="PackedScene" uid="uid://bemb37fo0seak" path="res://object/player/resource/component/Skills.tscn" id="4_rvvrg"]
-[ext_resource type="PackedScene" uid="uid://dq4rt7vk6a7kv" path="res://object/player/resource/component/lockon/Lockon.tscn" id="5_nbsp3"]
+[ext_resource type="Script" path="res://object/player/resource/script/CharacterController.cs" id="1_tgstl"]
+[ext_resource type="PackedScene" uid="uid://qmsgr6kswk87" path="res://object/player/resource/component/PathFollower.tscn" id="2_4qiqe"]
+[ext_resource type="PackedScene" uid="uid://wfh54hnc028k" path="res://object/player/resource/model/Sonic.tscn" id="3_b6ejv"]
+[ext_resource type="PackedScene" uid="uid://bemb37fo0seak" path="res://object/player/resource/component/Skills.tscn" id="4_mb64f"]
+[ext_resource type="PackedScene" uid="uid://dq4rt7vk6a7kv" path="res://object/player/resource/component/lockon/Lockon.tscn" id="5_bih6o"]
 
 [sub_resource type="Curve" id="Curve_0y4at"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0645833, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0777784, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -20,12 +20,12 @@ radius = 0.4
 [sub_resource type="SphereShape3D" id="80"]
 radius = 0.36
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Skills", "Lockon") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Animator", "Effect", "Skills", "Lockon") groups=["player"]]
 collision_layer = 2
 collision_mask = 9
 floor_stop_on_slope = false
 floor_block_on_wall = false
-script = ExtResource("1_1erku")
+script = ExtResource("1_tgstl")
 turningSpeedCurve = SubResource("Curve_0y4at")
 inputCurve = SubResource("Curve_l0cmy")
 jumpHeight = 4.8
@@ -37,18 +37,20 @@ backflipHeight = 2.4
 environmentCollider = NodePath("CollisionShape3D")
 areaTrigger = NodePath("Components/AreaTrigger/CollisionShape3D")
 PathFollower = NodePath("Components/PathFollower")
+Animator = NodePath("Components/Sonic")
+Effect = NodePath("Components/Sonic/Effect")
 Skills = NodePath("Components/Skills")
 Lockon = NodePath("Components/Lockon")
 
 [node name="Components" type="Node3D" parent="."]
 
-[node name="PathFollower" parent="Components" instance=ExtResource("2_cvbn4")]
+[node name="PathFollower" parent="Components" instance=ExtResource("2_4qiqe")]
 
-[node name="CursedSonic" parent="Components" instance=ExtResource("3_mu518")]
+[node name="Sonic" parent="Components" instance=ExtResource("3_b6ejv")]
 
-[node name="Skills" parent="Components" instance=ExtResource("4_rvvrg")]
+[node name="Skills" parent="Components" instance=ExtResource("4_mb64f")]
 
-[node name="Lockon" parent="Components" node_paths=PackedStringArray("areaTrigger") instance=ExtResource("5_nbsp3")]
+[node name="Lockon" parent="Components" node_paths=PackedStringArray("areaTrigger") instance=ExtResource("5_bih6o")]
 areaTrigger = NodePath("../AreaTrigger")
 
 [node name="AreaTrigger" type="Area3D" parent="Components" groups=["player"]]
@@ -65,5 +67,3 @@ shape = SubResource("80")
 
 [connection signal="body_entered" from="Components/AreaTrigger" to="." method="OnObjectCollisionEnter"]
 [connection signal="body_exited" from="Components/AreaTrigger" to="." method="OnObjectCollisionExit"]
-
-[editable path="Components/CursedSonic"]
