@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cexusptfk1osy"]
 
 [ext_resource type="Resource" uid="uid://bvgmr6otpd1o0" path="res://resource/level data/sand oasis/Act1Race.tres" id="2_6245g"]
-[ext_resource type="PackedScene" uid="uid://dgdhn3vex6l7j" path="res://object/player/CusredSonicPlayer/CusredCharacterSpawn.tscn" id="3_n5lbw"]
+[ext_resource type="PackedScene" uid="uid://cjupypih0myxo" path="res://object/player/CharacterSpawn.tscn" id="3_7ubki"]
 [ext_resource type="Script" path="res://addons/custom_nodes/script/ObjectGenerator.cs" id="4_f3m4h"]
 [ext_resource type="Script" path="res://object/trigger/modules/CullingTrigger.cs" id="4_ncewo"]
 [ext_resource type="Curve3D" path="res://area/1 sand oasis/act 1/environment/path/OasisPath.tres" id="4_pv4fg"]
@@ -213,8 +213,7 @@ Data = ExtResource("2_6245g")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2, 75, 0)
 metadata/_edit_lock_ = true
 
-[node name="CharacterSpawn" parent="RaceAct/SpawnPosition" instance=ExtResource("3_n5lbw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00558472, 0.00107574, 0.00198609)
+[node name="CharacterSpawn" parent="RaceAct/SpawnPosition" instance=ExtResource("3_7ubki")]
 
 [node name="Uhu" type="Node3D" parent="RaceAct"]
 visible = false

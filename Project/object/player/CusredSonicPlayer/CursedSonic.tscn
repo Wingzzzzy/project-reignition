@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyip40w65iqfq"]
+[gd_scene load_steps=10 format=3 uid="uid://bf0e60p4fbkkv"]
 
 [ext_resource type="Script" path="res://object/player/resource/script/CharacterController.cs" id="1_1erku"]
 [ext_resource type="PackedScene" uid="uid://qmsgr6kswk87" path="res://object/player/resource/component/PathFollower.tscn" id="2_cvbn4"]
@@ -20,7 +20,7 @@ radius = 0.4
 [sub_resource type="SphereShape3D" id="80"]
 radius = 0.36
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Skills", "Lockon") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Animator", "Effect", "Skills", "Lockon") groups=["player"]]
 collision_layer = 2
 collision_mask = 9
 floor_stop_on_slope = false
@@ -37,6 +37,8 @@ backflipHeight = 2.4
 environmentCollider = NodePath("CollisionShape3D")
 areaTrigger = NodePath("Components/AreaTrigger/CollisionShape3D")
 PathFollower = NodePath("Components/PathFollower")
+Animator = NodePath("")
+Effect = NodePath("")
 Skills = NodePath("Components/Skills")
 Lockon = NodePath("Components/Lockon")
 
@@ -45,6 +47,18 @@ Lockon = NodePath("Components/Lockon")
 [node name="PathFollower" parent="Components" instance=ExtResource("2_cvbn4")]
 
 [node name="CursedSonic" parent="Components" instance=ExtResource("3_mu518")]
+
+[node name="Effect" parent="Components/CursedSonic" index="0" node_paths=PackedStringArray("stepEmitters")]
+stepEmitters = [NodePath("VFX/StepFX/PavementStepParticle"), NodePath("VFX/StepFX/SandStepParticle"), null, null, null, null, NodePath("VFX/StepFX/WaterStepParticle")]
+
+[node name="ChestAttachment" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="4"]
+transform = Transform3D(1, 7.92686e-07, -7.92686e-07, -7.92686e-07, 1, 1.59254e-08, 7.92686e-07, -1.59248e-08, 1, 5.80681e-08, 0.554189, -2.23517e-08)
+
+[node name="RFoot" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="5"]
+transform = Transform3D(1, -1.02496e-12, -6.143e-13, 6.16757e-13, 2.03494e-07, 0.999999, -9.71667e-13, -0.999998, 2.21189e-07, -0.0397276, 0.155469, 0.00205613)
+
+[node name="LFoot" parent="Components/CursedSonic/SonicRoot/GeneralSkeleton" index="6"]
+transform = Transform3D(1, 1.06581e-14, 6.15422e-12, -6.2165e-12, 1.07381e-06, 1, 1.33227e-13, -1, 1.07894e-06, 0.0397276, 0.155469, 0.00205613)
 
 [node name="Skills" parent="Components" instance=ExtResource("4_rvvrg")]
 

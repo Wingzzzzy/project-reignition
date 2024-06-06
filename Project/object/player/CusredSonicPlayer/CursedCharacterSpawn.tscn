@@ -1,17 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgdhn3vex6l7j"]
+[gd_scene load_steps=10 format=3 uid="uid://cf1fmie6k3ftd"]
 
 [ext_resource type="Script" path="res://object/trigger/modules/CheckpointTrigger.cs" id="1_52tq8"]
-[ext_resource type="PackedScene" uid="uid://dyip40w65iqfq" path="res://object/player/CusredSonicPlayer/CursedSonic.tscn" id="2_2vrgm"]
+[ext_resource type="Script" path="res://object/player/resource/script/CharacterController.cs" id="2_vre7x"]
 [ext_resource type="PackedScene" uid="uid://boo3c0dnk36vn" path="res://object/player/Camera.tscn" id="3_ne44w"]
 [ext_resource type="PackedScene" uid="uid://b33gqnpc4784k" path="res://interface/gameplay/countdown/Countdown.tscn" id="4_oghdi"]
 [ext_resource type="PackedScene" uid="uid://chn7ckbhlrr2g" path="res://interface/gameplay/hud/HeadsUpDisplay.tscn" id="5_x8o2u"]
 [ext_resource type="PackedScene" uid="uid://x03eut8s4p3l" path="res://interface/gameplay/results/LevelResults.tscn" id="6_mf27b"]
 [ext_resource type="PackedScene" uid="uid://coshp5qmt1aq7" path="res://interface/gameplay/pause/PauseMenu.tscn" id="7_ytsoi"]
 
+[sub_resource type="Curve" id="Curve_0y4at"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0645833, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0777784, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_l0cmy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 0), 0.0, 0.0, 0, 0, Vector2(0.4, 0.5), 4.05151, 4.05151, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="CharacterSpawn" type="Node3D"]
 script = ExtResource("1_52tq8")
 
-[node name="Player" parent="." instance=ExtResource("2_2vrgm")]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("environmentCollider", "areaTrigger", "PathFollower", "Skills", "Lockon") groups=["player"]]
+collision_layer = 2
+collision_mask = 9
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("2_vre7x")
+turningSpeedCurve = SubResource("Curve_0y4at")
+inputCurve = SubResource("Curve_l0cmy")
+jumpHeight = 4.8
+jumpDashSpeed = 36.0
+jumpDashPower = 4.0
+jumpDashGravity = 18.0
+jumpDashMaxGravity = -24.0
+backflipHeight = 2.4
+environmentCollider = NodePath("CollisionShape3D")
+areaTrigger = NodePath("Components/AreaTrigger/CollisionShape3D")
+PathFollower = NodePath("Components/PathFollower")
+Skills = NodePath("Components/Skills")
+Lockon = NodePath("Components/Lockon")
 
 [node name="Camera" parent="." instance=ExtResource("3_ne44w")]
 

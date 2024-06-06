@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://dql5q7525xd3s"]
+
+[ext_resource type="Script" path="res://object/trigger/modules/CheckpointTrigger.cs" id="1_ns3w4"]
+[ext_resource type="PackedScene" uid="uid://bf0e60p4fbkkv" path="res://object/player/CusredSonicPlayer/CursedSonic.tscn" id="2_om2k4"]
+[ext_resource type="PackedScene" uid="uid://boo3c0dnk36vn" path="res://object/player/Camera.tscn" id="3_wd6o7"]
+[ext_resource type="PackedScene" uid="uid://b33gqnpc4784k" path="res://interface/gameplay/countdown/Countdown.tscn" id="4_ehodx"]
+[ext_resource type="PackedScene" uid="uid://chn7ckbhlrr2g" path="res://interface/gameplay/hud/HeadsUpDisplay.tscn" id="5_jtb4m"]
+[ext_resource type="PackedScene" uid="uid://x03eut8s4p3l" path="res://interface/gameplay/results/LevelResults.tscn" id="6_8j370"]
+[ext_resource type="PackedScene" uid="uid://coshp5qmt1aq7" path="res://interface/gameplay/pause/PauseMenu.tscn" id="7_apc4q"]
+
+[node name="CharacterSpawn" type="Node3D"]
+script = ExtResource("1_ns3w4")
+
+[node name="Player" parent="." instance=ExtResource("2_om2k4")]
+
+[node name="Camera" parent="." instance=ExtResource("3_wd6o7")]
+
+[node name="Countdown" parent="." instance=ExtResource("4_ehodx")]
+
+[node name="HeadsUpDisplay" parent="." instance=ExtResource("5_jtb4m")]
+
+[node name="LevelResults" parent="." instance=ExtResource("6_8j370")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_apc4q")]
+
+[connection signal="CountdownFinished" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [true]]
+[connection signal="CountdownStarted" from="Countdown" to="HeadsUpDisplay" method="SetVisibility" binds= [false]]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=200 format=3 uid="uid://ms7rm6vsb708"]
+[gd_scene load_steps=201 format=3 uid="uid://ms7rm6vsb708"]
 
 [ext_resource type="Resource" uid="uid://chdva6qp0d51h" path="res://resource/level data/sand oasis/Act1Main.tres" id="2_62va5"]
+[ext_resource type="PackedScene" uid="uid://cjupypih0myxo" path="res://object/player/CharacterSpawn.tscn" id="3_ee08k"]
 [ext_resource type="PackedScene" uid="uid://bn6wr6l8s3qyt" path="res://object/trigger/StageTrigger.tscn" id="4_v6hfg"]
 [ext_resource type="Script" path="res://object/trigger/modules/DialogTrigger.cs" id="5_ox8ed"]
 [ext_resource type="Script" path="res://object/trigger/modules/EventTrigger.cs" id="6_gjqoq"]
@@ -13142,6 +13143,8 @@ Data = ExtResource("2_62va5")
 [node name="SpawnPosition" type="Node3D" parent="MainAct"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2, 75, 0)
 metadata/_edit_lock_ = true
+
+[node name="CharacterSpawn" parent="MainAct/SpawnPosition" instance=ExtResource("3_ee08k")]
 
 [node name="CullingMap" type="Node3D" parent="MainAct"]
 visible = false
