@@ -1,2 +1,35 @@
-              - name: godot-ci
-                uses: abarichello/godot-ci@4.2.2-stable
+image: barichello/godot-ci:mono-4.0.2
+
+# NOTE: the `cd` command in each build stage is not necessary if your
+# project.godot is at the repo root
+
+# Cache imported assets between runs
+cache:
+  key: import-assets
+  paths:
+    - .godot/imported/
+
+stages:
+  - import-assets
+  - export
+  - deploy
+
+variables:
+  EXPORT_NAME: test-project
+
+# Open the editor to import assets in case the cache was empty or outdated
+import-assets:
+  stage: import-assets
+  script:
+    - godot --headless --verbose --editor --quit
+
+windows:
+  stage: export
+  script:
+    - mkdir -v -p build/windows
+    - cd project $EXPORT_NAME
+    - godot --headless --verbose --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
+  artifacts:
+    name: $EXPORT_NAME-$CI_JOB_NAME
+    paths:
+      - build/windows
